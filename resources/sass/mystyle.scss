@@ -4,8 +4,7 @@
     --second-color: #e9892f;
     --second-gradient: linear-gradient(310deg, #e9892f, #e6a95a);
     --third-color: #185e03;
-    --third-gradient: linear-gradient(120deg, #155302, #2d7418);
-    
+    --third-gradient: linear-gradient(120deg, #155302, #2d7418);  
 }
 
 *{
@@ -17,6 +16,10 @@ body{
 
 .bg-first{
     background: var(--first-gradient);
+}
+
+.bg-footer{
+    background: #0e3601;
 }
 
 .header{
@@ -64,6 +67,97 @@ border-radius: 20px 20px 0 0;
   height: 80px;
   border: 0;
   border-radius: 40px;
-  margin-top: -70px;
+  position: relative;
+  outline: 0;
+}
+
+.search-bar{
+    margin-top: -40px;
+}
+
+.search-bar button{
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    border-radius: 40px;
+    border:0;
+    background: transparent;
+    color: #3f3f3f;
+    right: 20px;
+    outline: 0;
     
+}
+
+.search-bar button:hover{
+    color: #585858;
+    right: 20px;
+    outline: 0;
+    filter: drop-shadow(5px 5px 2px rgba(0, 0, 0, 0.158)); 
+}
+
+.form-custom{
+    width: 100%;
+    height: 50px;
+    border: 0;
+    border-radius: 40px;
+    outline: 0;
+    background: #ffffffc0;
+    position: relative;
+}
+
+textarea.form-custom{
+  height: 100%;
+}
+
+.file-custom{
+    width: 100%;
+    height: 50px;
+    border: 0;
+    border-radius: 40px;
+    outline: 0;
+    background: #ffffffc0;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-card{
+    z-index: 2;
+    border-radius: 15px;
+    background: inherit;
+    backdrop-filter: blur(7px);
+    border: 2px solid rgba(255, 255, 255, 0.13);
+}
+
+.form-card::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ffffff3b;
+    border-radius: 15px;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+    z-index: -999;
+    background: inherit;
+}
+
+.form-img-row{
+    position: relative;
+}
+
+.form-img{
+    border-radius: 15px;
+    position: absolute;
+    right: 0;
+    top: -20px;
+
+}
+
+.form-title{
+    z-index: 20 !important;
 }
