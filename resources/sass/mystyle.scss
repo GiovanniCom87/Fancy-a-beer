@@ -1,0 +1,69 @@
+:root{
+    --first-color: #e9b72f;
+    --first-gradient: linear-gradient(310deg, #e9b72f, #eec962);
+    --second-color: #e9892f;
+    --second-gradient: linear-gradient(310deg, #e9892f, #e6a95a);
+    --third-color: #185e03;
+    --third-gradient: linear-gradient(120deg, #155302, #2d7418);
+    
+}
+
+*{
+    font-family: 'Noto Sans', sans-serif;
+}
+body{
+    overflow-x: hidden;
+}
+
+.bg-first{
+    background: var(--first-gradient);
+}
+
+.header{
+    height: 40vh;
+    background: var(--first-gradient);
+    border-radius: 0 0 30px 30px;
+    position: relative;
+}
+
+.header-img{
+    position: absolute;
+    right: 10px;
+    bottom:-12vh;
+}
+
+.card-cs{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background: var(--second-gradient);
+    position: relative;
+}
+
+.card-cs img{
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+    top: -10px;
+    left: -10px;
+}
+
+.form-section{
+background: var(--third-gradient);
+border-radius: 20px 20px 0 0;
+}
+
+#map{
+    width: 100%;
+    height: 40vh;
+    border-radius: 15px;
+}
+
+.search-bar input{
+  width: 100%;
+  height: 80px;
+  border: 0;
+  border-radius: 40px;
+  margin-top: -70px;
+    
+}
