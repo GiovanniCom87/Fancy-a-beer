@@ -1,27 +1,6 @@
 <x-app>
     <x-slot name="title">Home - </x-slot>
-
-    <header class="container-fluid">
-        <div class="row header d-flex align-items-end p-3 p-md-5 shadow">
-            <div class="col-6 col-md-7 col-lg-9">
-                <h1 class="display-3 text-light font-weight-bold mb-0">FANCY A BEER?</h1>
-                <H2 class="d-none d-md-block display-3 text-light font-weight-bold mt-0">MEET ME HERE!</H2>
-            </div>
-            <figure class="col-6 col-md-5 col-lg-3 header-img text-center pr-0 pr-md-2">
-                <img class="img-fluid pr-0 pr-md-3" src="./media/full-bottle.png" alt="">
-            </figure>
-        </div>
-    </header>
-
-    <section class="search-bar container-fluid">
-        <div class="row">
-            <form class="col-12 col-md-7 mx-auto">
-                <input class="shadow px-5 h3 text-center" type="text">
-                <button><i class="fas fa-search fa-2x"></i></button>
-            </form>
-        </div>
-    </section>
-
+    {{-- Recenti --}}
     <section>
         <div class="container-fluid mt-4">
             <div class="row mb-5 py-4 px-5">
@@ -30,54 +9,41 @@
                 </div>
             </div>
             <div class="row px-3 px-md-5">
-                <div class="col-12 col-md-3 px-3 mb-3">
+                @foreach ($breweries as $brewery)
+                <div class="col-12 col-md-3 px-3 mb-4">
                     <div class="card-cs shadow">
-                        <img class="shadow" src="./media/birreria.jpg" alt="">
-                        <h3 class="px-2 text-light">Nome Birreria</h3>
-                        <p class="px-2 text-light lead">Luogo</p>
+                        <img class="shadow" src="{{Storage::url($brewery->img)}}" alt="{{$brewery->name}}">
+                        @if ($brewery->is_accepted == false)
+                            <form action="{{route('approve', $brewery->id)}}" method="POST">
+                                @csrf
+                                <button class="btn"><i class="fas fa-check-circle fa-2x text-light"></i></button>
+                            </form>
+                        @endif
+                        <h3 class="px-2 text-light">{{$brewery->name}}</h3>
+                        <p class="px-2 text-light lead">{{$brewery->address}}</p>
                     </div>
                 </div>
-                <div class="col-12 col-md-3 px-3 mb-3">
-                    <div class="card-cs shadow">
-                        <img class="shadow" src="./media/birreria.jpg" alt="">
-                        <h3 class="px-2 text-light">Nome Birreria</h3>
-                        <p class="px-2 text-light lead">Luogo</p>
-                    </div>
-                </div>
-                <div class="col-12 col-md-3 px-3 mb-3">
-                    <div class="card-cs shadow">
-                        <img class="shadow" src="./media/birreria.jpg" alt="">
-                        <h3 class="px-2 text-light">Nome Birreria</h3>
-                        <p class="px-2 text-light lead">Luogo</p>
-                    </div>
-                </div>
-                <div class="col-12 col-md-3 px-3 mb-3">
-                    <div class="card-cs shadow">
-                        <img class="shadow" src="./media/birreria.jpg" alt="">
-                        <h3 class="px-2 text-light">Nome Birreria</h3>
-                        <p class="px-2 text-light lead">Luogo</p>
-                    </div>
-                </div>                
+                @endforeach                 
             </div>
+
+            {{-- Mappa --}}
             <div class="row my-4">
                 <div class="col-12 px-3 px-md-5">
                     <div id="map" class="shadow"></div>
                 </div>
             </div>
         </div>
-
     </section>
 
+    {{-- Form segnalazione --}}
     <section class="form-section mt-5">
         <div class="container-fluid form-img-row">
-            <div class="row px-5 pt-4">
-                <div class="col-12 col-md-8 form-title">
-                    <h2 class="text-light text-center">Suggerisci la tua birreria preferita</h2>
-                </div>
-            </div>
             <div class="row pt-2 px-2 px-md-0">
-                <div class="col-12 col-md-8 form-card py-5">
-                    <form method="POST" action="" enctype="multipart/form-data">
+                <div class="col-12 col-md-6 mx-auto form-card py-5">
+                    <div>
+                        <h2 class="text-light text-center mb-5">Suggerisci la tua birreria preferita</h2>
+                    </div>
+                    <form method="POST" action="{{route('store')}}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-row">
                           <div class="form-group col-12">
@@ -108,6 +74,12 @@
                           
                         </div>
                         <div class="form-row">
+                            <div class="form-group col-12">
+                                <input name="address" type="text" class="form-custom px-4  @error('name') is-invalid @enderror" id="inputName" placeholder="Indirizzo Birreria">
+                                @error('address')
+                                    <div class="alert alert-danger py-1">{{$message}}</div>
+                                @enderror
+                              </div>
                             <div class="form-group col-6">
                                 <input name="lat" type="text" class="form-custom px-4  @error('name') is-invalid @enderror" id="lat" placeholder="Latitudine">
                                 @error('lat')
@@ -126,12 +98,8 @@
                         </div>
                     </form>
                 </div>
-                
                 <img class="form-img img-fluid" src="./media/form.jpg" alt="">
-                
             </div>
         </div>
     </section>
-
-
 </x-app>    

@@ -45,7 +45,10 @@
                     </li>
                 @endguest
                 <li class="nav-item">
-                    <a class="nav-link font-weight-bold text-light" href="">Birrerie</a>
+                    <a class="nav-link font-weight-bold text-light" href="{{route('homepage')}}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold text-light" href="{{route('breweries')}}">Birrerie</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link font-weight-bold text-light" href="">Contattaci</a>

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\BreweryController;
+use App\Http\Controllers\PublicController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -14,10 +16,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('homepage');
-});
+Route::get('/', [PublicController::class, 'index'])->name('homepage');
+
+Route::get('/birrerie', [PublicController::class, 'breweries'])->name('breweries');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::post('/store', [BreweryController::class, 'store'])->name('store');
+
+Route::post('/{id}/approve', [BreweryController::class, 'approve'])->name('approve');
+
