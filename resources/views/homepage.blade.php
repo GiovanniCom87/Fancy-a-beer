@@ -10,19 +10,17 @@
             </div>
             <div class="row px-3 px-md-5">
                 @foreach ($breweries as $brewery)
-                <div class="col-12 col-md-3 px-3 mb-4">
-                    <div class="card-cs shadow">
-                        <img class="shadow" src="{{Storage::url($brewery->img)}}" alt="{{$brewery->name}}">
-                        @if ($brewery->is_accepted == false)
-                            <form action="{{route('approve', $brewery->id)}}" method="POST">
-                                @csrf
-                                <button class="btn"><i class="fas fa-check-circle fa-2x text-light"></i></button>
-                            </form>
-                        @endif
-                        <h3 class="px-2 text-light">{{$brewery->name}}</h3>
-                        <p class="px-2 text-light lead">{{$brewery->address}}</p>
+                    <div class="col-12 col-sm-6 col-lg-4 col-xl-3 px-3 mb-4">
+                        <x-card
+                        id="{{$brewery->id}}"
+                        condition="{{$brewery->is_accepted}}"
+                        img="{{Storage::url($brewery->img)}}"
+                        route="{{route('approve', $brewery->id)}}"
+                        address="{{$brewery->address}}"
+                        name="{{$brewery->name}}"
+                        description="{{Str::limit($brewery->description, 60)}}"
+                        />
                     </div>
-                </div>
                 @endforeach                 
             </div>
 
@@ -37,7 +35,7 @@
 
     {{-- Form segnalazione --}}
     <section class="form-section mt-5">
-        <div class="container-fluid form-img-row">
+        <div class="container-fluid form-img-row p-3">
             <div class="row pt-2 px-2 px-md-0">
                 <div class="col-12 col-md-6 mx-auto form-card py-5">
                     <div>
@@ -98,7 +96,9 @@
                         </div>
                     </form>
                 </div>
-                <img class="form-img img-fluid" src="./media/form.jpg" alt="">
+                <div class="col-12 col-md-6 mx-auto d-flex align-items-center p-0">
+                    <img class="curved-border img-fluid w-100" src="./media/form.jpg" alt="">
+                </div>
             </div>
         </div>
     </section>

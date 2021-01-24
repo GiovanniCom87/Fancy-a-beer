@@ -10010,19 +10010,24 @@ body {
 }
 
 .card-cs {
-  width: 100%;
-  height: 100%;
+  width: 270px;
+  height: 270px;
   border-radius: 10px;
-  background: var(--second-gradient);
+  background: var(--first-gradient);
   position: relative;
+  overflow: hidden;
 }
 
 .card-cs img {
-  position: relative;
+  position: absolute;
   width: 100%;
   border-radius: 10px;
-  top: -10px;
-  left: -10px;
+  top: -150px;
+  transition: 0.4s;
+}
+
+.card-cs:hover img {
+  top: 0;
 }
 
 .card-cs button {
@@ -10034,6 +10039,26 @@ body {
   border-radius: 50%;
   top: 10px;
   left: 10px;
+}
+
+.card-text {
+  position: absolute;
+  bottom: 0;
+  transition: 0.4s;
+  filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.164));
+}
+
+.card-cs:hover .card-text {
+  bottom: -50px;
+}
+
+.card-text .description {
+  opacity: 1;
+  transition: 0.4s;
+}
+
+.card-cs:hover .card-text .description {
+  opacity: 0;
 }
 
 .form-section {
@@ -10136,13 +10161,6 @@ textarea.form-custom {
   background: inherit;
 }
 
-.form-img-row {
-  position: relative;
-}
-
-.form-img {
+.curved-border {
   border-radius: 15px;
-  position: absolute;
-  right: 10%;
-  top: -20px;
 }
