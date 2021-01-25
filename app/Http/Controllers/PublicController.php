@@ -10,7 +10,7 @@ class PublicController extends Controller
 {
     public function index() {
 
-        $breweries= Brewery::where('is_accepted', true)->orderBy('created_at', 'desc')->take(4)->get();
+        $breweries= Brewery::where('is_accepted', true)->orderBy('created_at', 'desc')->get();
 
         return view('homepage', compact('breweries'));
     }

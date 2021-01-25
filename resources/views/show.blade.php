@@ -2,7 +2,7 @@
     <div class="container my-5">
         <div class="row">
             <div class="col-12 mb-4">
-                <h2>{{$brewery->name}}</h2>
+                <h2 class="subtitle text-uppercase">{{$brewery->name}}</h2>
             </div>
         </div>
         <div class="row">
@@ -16,7 +16,15 @@
         </div>
         <div class="row my-5">
             <div class="col-12 px-3 ">
-                <div id="map" class="shadow"></div>
+                <div id="map" class="cicle shadow"
+                lat="{{$brewery->lat}}"
+                lon="{{$brewery->lon}}"
+                name="{{$brewery->name}}"
+                description="{{Str::limit($brewery->description, 60)}}"
+                address="{{$brewery->address}}"
+                img="{{Storage::url($brewery->img)}}"
+                >
+                </div>
             </div>
         </div>
     </div>
