@@ -25,7 +25,7 @@ class StoreBreweries extends FormRequest
     {
         return [
             'name' => 'required | max:20',
-            'description' => 'required | min:30 | max:200',
+            'description' => 'required | min:30 | max:500',
             'img'=>'required | image | mimes:jpeg,jpg,bmp,png',
             'lat' => ['required', 'regex:/^[-]?(([0-8]?[0-9])\.(\d+))|(90(\.0+)?)$/'],
             'lon' => ['required', 'regex:/^[-]?((((1[0-7][0-9])|([0-9]?[0-9]))\.(\d+))|180(\.0+)?)$/'],

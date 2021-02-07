@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Brewery;
+use App\Models\Comment;
 use Spatie\Image\Image;
 use Illuminate\Http\Request;
 use Spatie\Image\Manipulations;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreBreweries;
+use App\Http\Requests\StoreComments;
 
 class BreweryController extends Controller
 {
@@ -19,7 +22,7 @@ class BreweryController extends Controller
         $imgPath = 'public/media/' . $fileName;
         $cropImg = Image::load($srcPath)->crop(Manipulations::CROP_CENTER, 600, 600)->save($destPath);
 
-        $brewery = Brewery::create([
+        $b = Brewery::create([
             'name' => $request->name,
             'description' => $request->description,
             'img' => $imgPath,
@@ -40,4 +43,29 @@ class BreweryController extends Controller
 
         return redirect()->back()->with('message', 'La birreria è stata approvata');
     }
+
+    public function storeComment(StoreComments $request, $id){
+
+        $user = Auth::user();
+        $brewery = Brewery::find($id);
+        $comment = Comment::create([
+            'user_id' => $user->id,
+            'brewery_id' => $brewery->id,
+            'comment'=> $request->comment
+        ]);
+
+        $comment->save();
+        
+        return redirect()->back()->with('message', 'Il commento è stato aggiunto');
+    }
+
+    public function beersSync($id, Request $request){
+
+        $beer_ids = $request->input('beer_ids');
+        $brewery = Brewery::find($id);
+        $brewery->beers()->sync($beer_ids);
+        
+        return redirect()->back();
+    
+       } 
 }

@@ -27,5 +27,11 @@ Route::post('/store', [BreweryController::class, 'store'])->name('store');
 
 Route::post('/{id}/approve', [BreweryController::class, 'approve'])->name('approve');
 
+Route::post('/{id}/salva_commento', [BreweryController::class, 'storeComment'])->name('storeComment');
+
+Route::post('/birrerie/{id}/beers/sync', [BreweryController::class,'beersSync'])->name('beers.sync');
+
 Route::get('/{id}/{name}', [PublicController::class, 'show'])->name('show');
+
+Route::get('/search', [PublicController::class, 'search'])->name('search');
 
