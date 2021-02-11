@@ -10012,7 +10012,7 @@ body {
 .header {
   height: 60vh;
   max-height: 320px;
-  background: url("/media/beer-texture.jpg");
+  background: url("/media/header.jpg");
   background-position: bottom;
   background-size: 60%;
   border-radius: 0 0 30px 30px;
@@ -10085,12 +10085,12 @@ nav button:focus {
     font-size: 38px;
   }
 }
-a.text-light {
+nav a.text-light {
   transition: 0.3s;
   border-bottom: 3px solid transparent;
 }
 
-a.text-light:hover, a.text-light:focus {
+nav a.text-light:hover, a.text-light:focus {
   color: #fff !important;
   border-bottom: 3px solid #fff;
 }
@@ -10099,6 +10099,24 @@ a.text-light:hover, a.text-light:focus {
   display: inline-block;
   border-bottom: 4px solid var(--first-color);
   padding-bottom: 7PX;
+}
+
+.section {
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.233);
+}
+
+.section-badge {
+  width: 50px !important;
+  height: 50px !important;
+  padding: 5px 0 5px 0;
+  display: inline-block;
+  border: 3px solid var(--first-color);
+  border-radius: 50%;
+}
+
+.form-card .section-badge {
+  border: 3px solid #fff;
 }
 
 .card-cs {
@@ -10176,7 +10194,7 @@ a.text-light:hover, a.text-light:focus {
 
 #map {
   width: 100%;
-  height: 600px;
+  height: 400px;
   min-height: 50vh;
   border-radius: 15px;
 }
@@ -10309,7 +10327,7 @@ textarea.form-custom {
 }
 
 .success-alert {
-  color: #20b652;
+  color: #059625;
   background: #ffffff6e;
   border-radius: 20px;
   border: 1px solid #20b65288;

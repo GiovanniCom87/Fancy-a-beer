@@ -2,13 +2,18 @@
     <x-slot name="title">Home - </x-slot>
     {{-- Recenti --}}
     <section>
-        <div class="container-fluid mt-4">
-            <div class="row mb-3 py-4 px-5">
-                <div class="col-12">
-                    <h4 class="text-uppercase font-weight-bold subtitle">Recenti</h4>
+        <div class="container-fluid mt-4 px-4 px-md-5">
+            <div class="row mb-4">
+                <div class="col-12 section py-3 d-flex flex-wrap align-items-center justify-content-center">
+                    <div class="section-badge mr-3 mb-2 mb-md-0 text-center"><span class="text-first h3">1</span></div>
+                    <h2 class="mb-0 text-center">Cerca tra le birrerie consigliate dai nostri utenti o vai all'<a class="text-first text-decoration-none" href="{{route('breweries')}}">elenco completo</a></h2>
                 </div>
             </div>
-            <div class="row px-0 px-md-5">
+            <div class="row section mb-4">
+                <div class="col-12 py-3 d-flex flex-wrap align-items-center justify-content-center">
+                    <div class="section-badge mr-3 mb-2 mb-md-0 text-center"><span class="text-first h3">2</span></div>
+                    <h2 class="mb-0 text-center">Guarda le consigliate più recenti</h2>
+                </div>
                 @foreach ($breweries->take(4) as $brewery)
                     <div class="col-12 col-sm-6 col-lg-4 col-xl-3 px-3 mb-4">
                         <x-card
@@ -23,12 +28,11 @@
                     </div>
                 @endforeach                 
             </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="container-fluid mt-5">
-            <div class="row mt-4 pl-md-5">
+            <div class="row mb-4 section">
+                <div class="col-12 py-3 d-flex flex-wrap align-items-center justify-content-center">
+                    <div class="section-badge mr-3 mb-2 mb-md-0 text-center"><span class="text-first h3">3</span></div>
+                    <h2 class="mb-0 text-center">Naviga sulla mappa per trovare il locale più vicino a te</h2>
+                </div>
                 {{-- Mappa --}}
                 @foreach ($breweries as $brewery)
                 <div class="cicle d-none"
@@ -39,20 +43,29 @@
                     lat="{{$brewery->lat}}"
                     lon="{{$brewery->lon}}"
                     link="{{route('show', ['id'=>$brewery->id, 'name'=>$brewery->name])}}"
-                ></div>
-                    
+                ></div> 
                 @endforeach
-                <div class="col-12 col-md-5 px-3 my-4">
+                <div class="col-12 px-3 mb-4">
                     <div id="map" class="shadow"></div>
                 </div>
-                {{-- Form segnalazione --}}
-                <div class="col-12 col-md-7 form-card px-3 py-5 ">
-                    <div class="mb-5">
-                        <h2 class="text-light text-center">Suggerisci la tua birreria preferita</h2>
-                        @if (session('message'))
-                            <h5 class="py-1 success-alert text-center px-0 mt-1">{{session('message')}}</h5>
-                        @endif
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container-fluid mt-5">
+            <div class="row form-card mt-4">
+                <div class="col-12 py-3 d-flex flex-wrap align-items-center justify-content-center">
+                    <div class="section-badge mr-3 mb-2 mb-md-0 text-center"><span class="text-light h3">4</span></div>
+                    <h2 class="mb-0 text-center text-light">E non dimenticare di consigliare la tua birreria preferita</h2>
+                </div>
+                @if (session('message'))
+                    <div class="col-12 col-md-7 mx-auto">
+                        <h5 class="py-1 success-alert text-center px-2 mt-1">{{session('message')}}</h5>
                     </div>
+                @endif
+                {{-- Form segnalazione --}}
+                <div class="col-12 col-md-7 mx-auto px-3 pt-4 pb-5 ">
                     <form method="POST" action="{{route('store')}}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-row">

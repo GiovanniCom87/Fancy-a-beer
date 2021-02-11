@@ -26,7 +26,7 @@
                         <h5 class="text-first">Le nostre birre</h5>
                         @if (count($brewery->beers) > 0)
                             @foreach ($brewery->beers as $beer)
-                                <span class="badge bg-first rounded-pill text-light">{{$beer->name}}</span>
+                                <span class="badge bg-first pb-1 px-2 rounded-pill text-light">{{$beer->name}}</span>
                             @endforeach
                         @else
                             <h6 class="font-italic text-secondary">Scusa! Al momento non sono state inserite birre.</h6>
