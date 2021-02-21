@@ -20,14 +20,16 @@
                         <p class="lead">9:00 - 22:00</p>
                     </div>
                     <div class="col-4 col-sm-3 d-flex align-items-center justify-content-end">
-                        <a class="btn bg-first rounded-pill text-light" href="mailto:prenotazioni@birra.it">Prenota</a>
+                        <a class="btn bg-first rounded-pill text-white font-weight-bold px-3" href="mailto:prenotazioni@birra.it">Prenota</a>
                     </div>
                     <div class="col-12">
                         <h5 class="text-first">Le nostre birre</h5>
                         @if (count($brewery->beers) > 0)
+                        <div class="d-flex flex-wrap">
                             @foreach ($brewery->beers as $beer)
-                                <span class="badge bg-first pb-1 px-2 rounded-pill text-light">{{$beer->name}}</span>
-                            @endforeach
+                                <span class="bg-first pb-1 px-3 rounded-pill text-white m-1 font-weight-bold align-text-baseline">{{$beer->name}}</span>
+                                @endforeach
+                            </div>
                         @else
                             <h6 class="font-italic text-secondary">Scusa! Al momento non sono state inserite birre.</h6>
                         @endif
@@ -70,7 +72,7 @@
                 @if (count($comments) > 0)
                     @foreach ($comments->take(10) as $comment)   
                         <div id="cloud-wrap">
-                            <div id="cloud" class="text-light shadow my-3 px-3 py-2">
+                            <div id="cloud" class="text-light bg-footer shadow my-3 px-3 py-2">
                                 <p class="mb-3 border-bottom ">{{$comment->user->name}} - <span class="small">{{$comment->created_at->format('d/m/Y - h:i')}}</span></p>
                                 <p class="lead mb-5 font-italic">"{{$comment->comment}}"</p>
                                 {{-- <p class="small text-right mb-5"></p> --}}

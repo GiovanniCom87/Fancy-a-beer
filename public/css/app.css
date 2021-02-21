@@ -9998,7 +9998,7 @@ body {
 }
 
 .bg-footer {
-  background: #242424;
+  background: #383838;
 }
 
 .text-first {
@@ -10009,10 +10009,14 @@ body {
   border-radius: 15px;
 }
 
+.text-light {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.377);
+}
+
 .header {
   height: 60vh;
   max-height: 320px;
-  background: url("/media/header.jpg");
+  background: linear-gradient(#f8bc08ea 15%, transparent), url("/media/header.jpg");
   background-position: bottom;
   background-size: 60%;
   border-radius: 0 0 30px 30px;
@@ -10210,7 +10214,6 @@ a.text-light:focus {
   width: 90px;
   border-radius: 0 25px 25px 0;
   border: 0;
-  color: white;
   background: var(--first-gradient);
   right: 0;
   outline: 0;
@@ -10274,7 +10277,6 @@ textarea.form-custom {
 #cloud {
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 93% 75%, 93% 92%, 84% 75%, 0% 75%);
           clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 93% 75%, 93% 92%, 84% 75%, 0% 75%);
-  background: var(--first-gradient);
 }
 
 #cloud-wrap {
@@ -10352,6 +10354,7 @@ textarea.form-custom {
 
 .social-link:hover {
   color: #f0f0f0;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.377);
 }
 
 .social-link:hover.social-link::after {

@@ -92,7 +92,7 @@
                         <div class="form-row mt-2">
                             <div id="search" class="form-group col-12 position-relative">   
                                 <input id="address" name="address" type="text" value="{{old('address')}}" class="form-custom px-4  @error('name') is-invalid @enderror" id="inputName" placeholder="Indirizzo Birreria">
-                                <button class="address-btn" type="button" onclick="addr_search();">Search</button>
+                                <button class="address-btn text-light" type="button" onclick="addr_search();">Cerca</button>
                                 @error('address')
                                     <div class="py-1 form-alert text-center px-0 mt-1">{{$message}}</div>
                                 @enderror
