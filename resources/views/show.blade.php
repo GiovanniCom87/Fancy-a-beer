@@ -19,7 +19,7 @@
                         <h5 class="text-first">Orario</h5>
                         <p class="lead">9:00 - 22:00</p>
                     </div>
-                    <div class="col-4 col-sm-3 d-flex align-items-center justify-content-center">
+                    <div class="col-4 col-sm-3 d-flex align-items-center justify-content-end">
                         <a class="btn bg-first rounded-pill text-light" href="mailto:prenotazioni@birra.it">Prenota</a>
                     </div>
                     <div class="col-12">

@@ -50,4 +50,10 @@ class PublicController extends Controller
 
         return view('show', compact('brewery', 'comments', 'user', 'beers'));
     }
+
+    public function contact(){
+
+        return view('contact');
+
+    }
 }

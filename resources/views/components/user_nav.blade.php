@@ -28,7 +28,7 @@
                             {{ 'Ciao, '. Auth::user()->name . '!' }}
                         </a>
 
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
@@ -48,7 +48,7 @@
                     <a class="nav-link font-weight-bold text-light h4" href="{{route('breweries')}}">Birrerie</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link font-weight-bold text-light h4" href="">Contattaci</a>
+                    <a class="nav-link font-weight-bold text-light h4" href="{{route('contact')}}">Contattaci</a>
                 </li>
             </ul>
         </div>

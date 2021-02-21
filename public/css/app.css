@@ -10019,23 +10019,15 @@ body {
   position: relative;
 }
 
-@media screen and (max-width: 575px) {
-  .header {
-    background-size: 120%;
-  }
-}
 .header-img {
   position: absolute;
   right: 10px;
   top: 60px;
+  filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.192));
 }
 
-@media screen and (max-height: 440px) {
-  header img {
-    height: 250px;
-  }
-}
-.header h1, .header h2 {
+.header h1,
+.header h2 {
   font-size: 70px;
 }
 
@@ -10050,13 +10042,6 @@ body {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.205);
 }
 
-@media screen and (max-width: 767px) {
-  nav.navbar {
-    background: #f9b807ce !important;
-    border-radius: 0 0 25px 25px;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.13);
-  }
-}
 nav button:focus {
   outline: white !important;
 }
@@ -10065,32 +10050,13 @@ nav button:focus {
   cursor: pointer;
 }
 
-@media screen and (max-width: 991px) {
-  .header h1, .header h2 {
-    font-size: 62px;
-  }
-}
-@media screen and (max-width: 768px) {
-  .header h1, .header h2 {
-    font-size: 58px;
-  }
-}
-@media screen and (max-width: 575px) {
-  .header h1, .header h2 {
-    font-size: 45px;
-  }
-}
-@media screen and (max-width: 330px) {
-  .header h1, .header h2 {
-    font-size: 38px;
-  }
-}
 nav a.text-light {
   transition: 0.3s;
   border-bottom: 3px solid transparent;
 }
 
-nav a.text-light:hover, a.text-light:focus {
+nav a.text-light:hover,
+a.text-light:focus {
   color: #fff !important;
   border-bottom: 3px solid #fff;
 }
@@ -10098,7 +10064,7 @@ nav a.text-light:hover, a.text-light:focus {
 .subtitle {
   display: inline-block;
   border-bottom: 4px solid var(--first-color);
-  padding-bottom: 7PX;
+  padding-bottom: 7px;
 }
 
 .section {
@@ -10113,10 +10079,6 @@ nav a.text-light:hover, a.text-light:focus {
   display: inline-block;
   border: 3px solid var(--first-color);
   border-radius: 50%;
-}
-
-.form-card .section-badge {
-  border: 3px solid #fff;
 }
 
 .card-cs {
@@ -10147,7 +10109,8 @@ nav a.text-light:hover, a.text-light:focus {
   transition: 0.4s;
 }
 
-.card-cs:hover img, .card-cs:hover .overlay {
+.card-cs:hover img,
+.card-cs:hover .overlay {
   top: -140px;
 }
 
@@ -10194,7 +10157,7 @@ nav a.text-light:hover, a.text-light:focus {
 
 #map {
   width: 100%;
-  height: 400px;
+  height: 600px;
   min-height: 50vh;
   border-radius: 15px;
 }
@@ -10279,8 +10242,7 @@ textarea.form-custom {
 .form-card {
   z-index: 2;
   border-radius: 15px 15px 0 0;
-  background: var(--second-color);
-  border: 2px solid rgba(255, 255, 255, 0.13);
+  border-bottom: 3px solid var(--first-color);
 }
 
 #results {
@@ -10394,4 +10356,59 @@ textarea.form-custom {
 
 .social-link:hover.social-link::after {
   transform: scale(1);
+}
+
+.contact-card {
+  min-height: 300px;
+  border-radius: 25px;
+}
+
+.gif-card {
+  margin-left: -20%;
+  filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.192));
+}
+
+@media screen and (max-width: 991px) {
+  .header h1,
+.header h2 {
+    font-size: 62px;
+  }
+}
+@media screen and (max-width: 767px) {
+  nav.navbar {
+    background: #f9b807ce !important;
+    border-radius: 0 0 25px 25px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.13);
+  }
+
+  .header h1,
+.header h2 {
+    font-size: 58px;
+  }
+
+  #map {
+    min-height: 50vh;
+    height: 400px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .header {
+    background-size: 120%;
+  }
+
+  .header h1,
+.header h2 {
+    font-size: 45px;
+  }
+}
+@media screen and (max-height: 440px) {
+  header img {
+    height: 250px;
+  }
+}
+@media screen and (max-width: 330px) {
+  .header h1,
+.header h2 {
+    font-size: 38px;
+  }
 }

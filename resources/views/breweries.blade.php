@@ -2,6 +2,11 @@
     <x-slot name="title">Birrerie - </x-slot>
 <div class="container-fluid">
     <div class="row my-4">
+        <div class="col-12">
+            <h2 class="text-center rounded-pill text-secondary px-2 py-1">Ecco tutte le birrerie consigliate dai nostri utenti</h2>
+        </div>
+    </div>
+    <div class="row my-4">
         @if(session('message'))
         <div class="col-12 col-md-7 mx-auto">
             <h2 class="text-center success-alert bg-result rounded-pill px-2 py-1">{{session('message')}}</h2>
@@ -14,7 +19,7 @@
             <div id="map" class="shadow"
             ></div>
         </div>
-        <div class="col-12 col-lg-7 mt-4">
+        <div class="col-12 col-lg-7 mt-4 mt-md-0">
             {{-- Birrerie --}}
             <div class="row px-3 pr-lg-5">
                 @foreach ($breweries as $brewery)

@@ -12,7 +12,7 @@
             <div class="row section mb-4">
                 <div class="col-12 py-3 d-flex flex-wrap align-items-center justify-content-center">
                     <div class="section-badge mr-3 mb-2 mb-md-0 text-center"><span class="text-first h3">2</span></div>
-                    <h2 class="mb-0 text-center">Guarda le consigliate più recenti</h2>
+                    <h2 class="mb-0 text-center">Guarda tra le novità</h2>
                 </div>
                 @foreach ($breweries->take(4) as $brewery)
                     <div class="col-12 col-sm-6 col-lg-4 col-xl-3 px-3 mb-4">
@@ -54,9 +54,9 @@
 
     <section>
         <div class="container-fluid mt-5">
-            <div class="row form-card mt-4">
+            <div class="row form-card bg-footer mt-4">
                 <div class="col-12 py-3 d-flex flex-wrap align-items-center justify-content-center">
-                    <div class="section-badge mr-3 mb-2 mb-md-0 text-center"><span class="text-light h3">4</span></div>
+                    <div class="section-badge mr-3 mb-2 mb-md-0 text-center"><span class="text-first h3">4</span></div>
                     <h2 class="mb-0 text-center text-light">E non dimenticare di consigliare la tua birreria preferita</h2>
                 </div>
                 @if (session('message'))

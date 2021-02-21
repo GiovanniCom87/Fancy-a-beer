@@ -35,3 +35,6 @@ Route::get('/{id}/{name}', [PublicController::class, 'show'])->name('show');
 
 Route::get('/search', [PublicController::class, 'search'])->name('search');
 
+Route::get('/contact', [PublicController::class, 'contact'])->name('contact');
+
+
