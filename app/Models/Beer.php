@@ -10,21 +10,10 @@ use Illuminate\Database\Eloquent\Model;
 class Beer extends Model
 {
     use HasFactory;
-    // use Searchable;
 
 
     public $guarded = [];
 
-    // public function toSearchableArray()
-    // {
-    //     $array = [
-    //         "id"=>$this->id,
-    //         "name"=>$this->name,
-    //     ];
-    
-
-    //     return $array;
-    // }
 
     public function breweries(){
         return $this->belongsToMany(Brewery::class);

@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'driver' => env('SCOUT_DRIVER', 'algolia'),
+    'driver' => 'tntsearch',
 
     /*
     |--------------------------------------------------------------------------
@@ -118,7 +118,7 @@ return [
 
     'tntsearch' => [
         'storage'  => storage_path(), //place where the index files will be stored
-        'fuzziness' => env('TNTSEARCH_FUZZINESS', true),
+        'fuzziness' =>  true,
         'fuzzy' => [
             'prefix_length' => 3,
             'max_expansions' => 50,
