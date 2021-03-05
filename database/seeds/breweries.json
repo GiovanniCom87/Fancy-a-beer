@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Birreria del corso",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    "img": "public/media/2IFiwpqcCcHZ2ceW4iPWoG8oG5Y8ukgtCMemciYJ.jpg",
+    "address": "Via Palmerino, Pagliarelli, IV Circoscrizione, Palermo, Sicilia, 90131, Italia",
+    "lon": 13.32475780,
+    "lat": 38.09276060,
+    "is_accepted": true,
+    "created_at": "2021-01-30 11:00:22",
+    "updated_at": "2021-01-30 11:45:50"
+  },
+  {
+    "id": 2,
+    "name": "Birra MIlano",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    "img": "public/media/LdOVSHhAFf8L43EC0P1Cl3s472dOxeKeqJsDO8N2.jpg",
+    "address": "Sempione, 5, Corso Sempione, Pagano, Municipio 1, Milano, Lombardia, 20154, Italia",
+    "lon": 9.17017710,
+    "lat": 45.47710410,
+    "is_accepted": true,
+    "created_at": "2021-01-30 11:00:22",
+    "updated_at": "2021-01-30 11:45:50"
+  },
+  {
+    "id": 3,
+    "name": "Ai due boccali",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    "img": "public/media/EatBhNwjrYhQDmZkQFUlryL94f0fvydtIPVZusWe.jpg",
+    "address": "Firenze, Città metropolitana di Firenze, Toscana, Italia",
+    "lon": 11.25557570,
+    "lat": 43.76987120,
+    "is_accepted": true,
+    "created_at": "2021-01-30 11:00:22",
+    "updated_at": "2021-01-30 11:45:50"
+  },
+  {
+    "id": 4,
+    "name": "Taverna di John",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    "img": "public/media/934wOnGhwsuipr1ZIcAwNq5fZgQ3WTgMKTtM3J68.jpg",
+    "address": "Via Bari, Contrada Bari, Conversano, Bari, Puglia, 70014, Italia",
+    "lon": 17.10674930,
+    "lat": 40.97408100,
+    "is_accepted": true,
+    "created_at": "2021-01-30 11:00:22",
+    "updated_at": "2021-01-30 11:45:50"
+  }
+]

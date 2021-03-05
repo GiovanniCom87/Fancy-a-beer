@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use App\Models\Brewery;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 class CreateBreweriesTable extends Migration
 {
@@ -24,6 +25,23 @@ class CreateBreweriesTable extends Migration
             $table->string('address')->nullable();
             $table->timestamps();
         });
+
+        $path = database_path('seeds/breweries.json');
+    
+        $breweries = json_decode(file_get_contents($path), true);
+    
+        foreach($breweries as $brewery){
+   
+            $b = new Brewery();
+            $b->name = $brewery['name'];
+            $b->description = $brewery['description'];
+            $b->address = $brewery['address'];
+            $b->lat = $brewery['lat'];
+            $b->lon = $brewery['lon'];
+            $b->img = $brewery['img'];
+            $b->is_accepted = $brewery['is_accepted'];
+            $b->save();
+        }
     }
 
     /**
